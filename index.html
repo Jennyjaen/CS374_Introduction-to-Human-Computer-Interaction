@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JaeHyun Kim 20170151</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./capital_game.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--Your HTML here-->
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./country_capital_pairs.js"></script>
+    <script src="./capital_game.js"></script>
+	<style>
+		.ui-autocomplete{
+			max-height: 200px;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+	</style>
+    <div>
+   		<h1 class="h1">World Capital Quiz Game</h1>
+    	<h2>Do you know the capital of this country?</h2>
+    
+	    <table id="quiz_table">
+	    	<thead align="center">
+	    		<tr>
+	    			<th>COUNTRY</th><th>CAPITAL CITY</th><th>ANSWER</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody align="left">
+	    		<!--second row-->
+	    		<tr>
+	    			<td id="pr2__country"></td>
+	    			<td><input id="pr2__capital" type="text"></td>
+	    			<!--button에 onclick 속성 추가할 것. onclick은 capitalgame.js에-->
+	    			<td id="pr2__button"><input type="button" value="See Answer"></td>
+	    		</tr>
+				<tr>
+	    			<td colspan="3">
+						<label><input type="radio" name="show" value="all" checked onclick="Selection();">All</label>
+						<label><input type="radio" name="show" value="correct" onclick="Selection();" >Correct Only</label>
+						<label><input type="radio" name="show" value="wrong" onclick="Selection();">Wrong Only</label>
+					</td>
+
+	    		</tr>
+
+	    	</tbody>
+	    </table>
+	</div>  
+  </body>
+</html>
