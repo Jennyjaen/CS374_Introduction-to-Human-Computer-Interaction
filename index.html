@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JaeHyun Kim 20170151</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./capital_game.css" rel="stylesheet" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+  </head>
+  <body>
+    <!--Your HTML here-->
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./capital_game.js"></script>
+   
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+	<style>
+		.ui-autocomplete{
+			max-height: 200px;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+	</style>
+    <div>
+   		<h1 class="h1">World Capital Quiz Game</h1>
+    	<h2>Do you know the capital of this country?</h2>
+      <div id='map' style='width: 600px; height: 450px;'></div>
+      <div>
+        <select name="show" id="show" onchange="Selection(this);">
+          <option value="all" >All</option>
+          <option value="correct" >Correct</option>
+          <option value="wrong" >Wrong</option>
+        </select>
+        <input type="button" id="pr3__reset" value="Reset" onclick="reset_firebase();">
+        <input type="button" id="pr3__clear" value="Clear" onclick="clear_firebase();">
+        <input type="button" id="pr3__undo" value="Undo" onclick="undo_firebase();">
+      </div>
+	    <table id="quiz_table">
+	    	<thead align="center">
+	    		<tr>
+	    			<th>COUNTRY</th><th>CAPITAL CITY</th><th>ANSWER</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody align="left">
+	    		<!--second row-->
+	    		<tr>
+	    			<td id="pr2__country"></td>
+	    			<td><input id="pr2__capital" type="text"></td>
+	    			<!--button에 onclick 속성 추가할 것. onclick은 capitalgame.js에-->
+	    			<td id="pr2__button"><input type="button" value="See Answer"></td>
+	    		</tr>
+	    	</tbody>
+	    </table>
+	</div>  
+  </body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiamVubnkta2ltIiwiYSI6ImNrb2tqbGZpazFscDgycG1pcjBxMmQ2eXUifQ.wnMPyiLaOHCmQi-CdOH9lQ';
+  var map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+      center: [-74.5, 40], // starting position [lng, lat]
+      zoom: 4 // starting zoom
+});
+</script>

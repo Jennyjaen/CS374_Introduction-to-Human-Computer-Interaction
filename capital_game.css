@@ -1,0 +1,30 @@
+body {
+    background-color: #eee;
+}
+
+div{
+	margin:auto;
+	width: 500px;
+}
+
+table{
+	border-collapse: collapse;
+	line-height: 1.5;
+	padding: 4px;
+}
+
+table th{
+	border-bottom: 2px solid black; 
+}
+table td{
+	border-bottom: 1px solid gray;
+}
+
+tr:nth-of-type(n+2):hover{
+    background-color: lightgray;
+}
+
+#row2:hover{
+    background-color: lightgray;
+}
+/*your code here*/
